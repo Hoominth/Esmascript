@@ -1,0 +1,213 @@
+<main>
+      <div class='container'>
+            <section class='section-slider' id='section--3'>
+                  <div class='slider'>
+                        <div
+                              class='slide slide--1'
+                              style='background: linear-gradient(to right, rgb(104, 40, 250), rgb(255, 186, 164));'
+                        >
+                              <div class='slide-left'>
+                                    <h2 class='slide-title'>
+                                          <a href='#!'>Học ReactJS Miễn Phí!</a>
+                                    </h2>
+                                    <p class='slide-desc'>
+                                          Đây là khóa học đầy đủ và chi tiết
+                                          nhất bạn có thể tìm thấy được ở trên
+                                          Internet!
+                                    </p>
+                                    <div>
+                                          <a class='btn btn-slide' href='#!'>Tìm
+                                                hiểu thêm</a>
+                                    </div>
+                              </div>
+                              <div class='slide-right'>
+                                    <a href=''>
+                                          <img
+                                                src='https://files.fullstack.edu.vn/f8-prod/banners/20/6308a6bf603a4.png'
+                                                alt=''
+                                          />
+                                    </a>
+                              </div>
+                        </div>
+                        <div
+                              class='slide slide--2'
+                              style='background: linear-gradient(to right, #f0772a,rgb(211, 163, 124));'
+                        >
+                              <div class='slide-left'>
+                                    <h2 class='slide-title'>
+                                          <a href='#!'>Học Handlebars Miễn Phí!</a>
+                                    </h2>
+                                    <p class='slide-desc'>
+                                          Khóa học Handlebars từ cơ bản tới nâng
+                                          cao. Khóa học này sẽ giúp bạn xử lý dữ
+                                          liệu ra giao diện và thực chiến với
+                                          Handlebars.
+                                    </p>
+                                    <div>
+                                          <a
+                                                class='btn btn-slide'
+                                                href='#!'
+                                          >Đăng ký ngay</a>
+                                    </div>
+                              </div>
+                              <div class='slide-right'>
+                                    <a href=''>
+                                          <img
+                                                src='./images/handlebars.png'
+                                                alt=''
+                                          />
+                                    </a>
+                              </div>
+                        </div>
+                        <div
+                              class='slide slide--3'
+                              style='background: linear-gradient(to left, #54ac5e, #008733);'
+                        >
+                              <div class='slide-left'>
+                                    <h2 class='slide-title'>
+                                          <a href='#!'>Học ReactJS Miễn Phí!</a>
+                                    </h2>
+                                    <p class='slide-desc'>
+                                          Khóa học NodeJS từ cơ bản tới nâng
+                                          cao. Kết quả của khóa học này là bạn
+                                          sẽ tạo ra được Server và đưa dữ liệu
+                                          vào giao diện với NodeJS.
+                                    </p>
+                                    <div>
+                                          <a
+                                                class='btn btn-slide'
+                                                href='#!'
+                                          >Đăng ký ngay</a>
+                                    </div>
+                              </div>
+                              <div class='slide-right'>
+                                    <a href=''>
+                                          <img
+                                                src='./images/nodejs.png'
+                                                alt=''
+                                          />
+                                    </a>
+                              </div>
+                        </div>
+                        <div
+                              class='slide slide--4'
+                              style='background: linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205));'
+                        >
+                              <div class='slide-left'>
+                                    <h2 class='slide-title'>
+                                          <a href='#!'>Học NodeJS Miễn Phí!</a>
+                                    </h2>
+                                    <p class='slide-desc'>
+                                          Khóa học ReactJS từ cơ bản tới nâng
+                                          cao. Kết quả của khóa học này là bạn
+                                          có thể làm hầu hết các dự án thường
+                                          gặp với ReactJS.
+                                    </p>
+                                    <div>
+                                          <a
+                                                class='btn btn-slide'
+                                                href='#!'
+                                          >Đăng ký ngay</a>
+                                    </div>
+                              </div>
+                              <div class='slide-right'>
+                                    <a href=''>
+                                          <img
+                                                src='https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png'
+                                                alt=''
+                                          />
+                                    </a>
+                              </div>
+                        </div>
+
+                        <div class='dots'></div>
+                  </div>
+                  <button class='slider__btn slider__btn--left'>
+                        <i class='ri-arrow-left-s-line'></i>
+                  </button>
+                  <button class='slider__btn slider__btn--right'>
+                        <i class='ri-arrow-right-s-line'></i>
+                  </button>
+            </section>
+            <section class='section-courses'>
+                  {{#if coursePro}}
+                        <div class='course-paid'>
+                              <h2 class='courses-title px-4'>
+                                    <span>
+                                          Courses pro
+                                          <span
+                                                class='courses-title--label'
+                                          >New</span>
+                                    </span>
+                              </h2>
+                              <div class='courses pro'>
+                                    {{#each coursePro}}
+                                          <div class='course col-md-4 col-sm-6 col-xl-3 px-4'>
+                                                <div class='course-bg'>
+                                                      <a
+                                                            href='/courses/{{this.slug}}'
+                                                            class='course-thumb'
+                                                            style='background-image: url("/uploads/{{this.image}}");'
+                                                      >
+                                                            <div class="course-thumb--hover">
+                                                                  <button class="course-button">Xem khóa học</button>
+                                                            </div>
+                                                      </a>
+                                                      <div class='course-content'>
+                                                            <h3 class='course-title'>
+                                                                  <a href='#!'>{{this.name}}</a>
+                                                            </h3>
+                                                            <div class='course-price'>
+                                                                  <span class='course-price--old'>{{this.priceOld}}đ</span>
+                                                                  <span class='course-price--main'>{{this.priceMain}}đ</span>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    {{/each}}
+                              </div>
+                        </div>
+                  {{/if}}
+                  {{#if courseFree}}
+                        <div class='course-free'>
+                              <h2 class='courses-title px-4'>
+                                    Courses free
+                              </h2>
+                              <div class='courses free'>
+                                    {{#each courseFree}}
+                                          <div class='course course--free col-md-4 col-sm-6 col-xl-3 px-4'>
+                                                <div class='course-bg'>
+                                                      <a
+                                                            href='/courses/{{this.slug}}'
+                                                            class='course-thumb'
+                                                            style='background-image: url("/uploads/{{this.image}}");'
+                                                      >
+                                                            <div class="course-thumb--hover">
+                                                                  <button class="course-button">Xem khóa học</button>
+                                                            </div>
+                                                      </a>
+                                                      <div class='course-content'>
+                                                            <h3 class='course-title'>
+                                                                  <a href='#!'>{{this.name}}</a>
+                                                            </h3>
+                                                            <div class='course-student--count'>
+                                                                  <svg
+                                                                        xmlns='http://www.w3.org/2000/svg'
+                                                                        viewBox='0 0 24 24'
+                                                                        width='18'
+                                                                        height='18'
+                                                                  ><path fill='none' d='M0 0h24v24H0z'></path><path
+                                                                              d='M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z'
+                                                                        ></path></svg>
+                                                                  <span>{{this.userCount}}</span>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    {{/each}}
+                              </div>
+                        </div>
+                  {{/if}}
+            </section>
+      </div>
+</main>

@@ -1,0 +1,42 @@
+.footer {
+      background-image: linear-gradient(
+            to top right,
+            rgb(30, 28, 30),
+            hsl(273, 82%, 17%)
+      );
+      color: var(--white-color);
+      padding: 6rem 0 3rem;
+      &-top {
+            display: flex;
+      }
+      &-logo {
+            a {
+                  display: flex;
+                  align-items: center;
+                  margin-right: 4rem;
+                  i::before {
+                        font-size: 4.25rem;
+                        margin-right: 1rem;
+                        background: -webkit-linear-gradient(
+                              top right,
+                              rgb(214, 143, 224),
+                              #551a8b
+                        );
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                  }
+                  span {
+                        text-transform: uppercase;
+                        font-size: 2.4rem;
+                        font-weight: 600;
+                        background: -webkit-linear-gradient(
+                              top right,
+                              #551a8b,
+                              rgb(214, 143, 224)
+                        );
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                  }
+            }
+      }
+}

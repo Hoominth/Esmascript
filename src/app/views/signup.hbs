@@ -1,0 +1,66 @@
+<section class='section-form'>
+      <div class='form'>
+            <h2 class='form-title'>Sign up</h2>
+            <form method='POST' class='form-register' id='createUser'>
+                  <div class='form-group'>
+                        <label for='name'>Your name?</label>
+                        <div class='form-icon'>
+                              <i class='ri-user-line'></i>
+                              <input
+                                    type='text'
+                                    id='name'
+                                    name='username'
+                                    class='form-control'
+                                    placeholder='Your full name'
+                                    required
+                              />
+                              <span class="form-message"></span>
+                        </div>
+                  </div>
+                  <div class='form-group'>
+                        <label for='email'>Email</label>
+                        <div class='form-icon'>
+                              <i class='ri-mail-line'></i>
+                              <input
+                                    type='email'
+                                    id='email'
+                                    name='email'
+                                    class='form-control'
+                                    placeholder='Email address'
+                                    required
+                              />
+                        </div>
+                        <div class='form-icon'>
+                              <i class='ri-lock-line'></i>
+                              <input
+                                    type='password'
+                                    id='password'
+                                    name='password'
+                                    class='form-control'
+                                    placeholder='Password'
+                                    autocomplete='on'
+                                    required
+                              />
+                        </div>
+                        <div class='form-icon'>
+                              <i class='ri-lock-password-line'></i>
+                              <input
+                                    type='password'
+                                    id='password1'
+                                    name='password2'
+                                    class='form-control'
+                                    placeholder='Cofirm password'
+                                    autocomplete='on'
+                                    required
+                              />
+                        </div>
+                  </div>
+                  <div class='form-group'>
+                        <button class='btn btn-signup'>Sign up</button>
+                        <a class='btn btn-signin' href='/signin'>Sign in
+                              <i class='ri-arrow-right-s-line'></i>
+                        </a>
+                  </div>
+            </form>
+      </div>
+</section>

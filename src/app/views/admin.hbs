@@ -1,0 +1,187 @@
+<html lang='en'>
+      <head>
+            <meta charset='UTF-8' />
+            <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+            <meta name='viewport'content='width=device-width, initial-scale=1.0' />
+            <link href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet' />
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer'/>
+            <link rel='stylesheet' href='./styles/app.css' />
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.rtl.min.css' integrity='sha512-TVEh7Wv2VL7denA2jjLclu/YHda8TiwmLZBhUqmJa+PVhIgbOs4mkx4nGQw+ok1f+3tf/NpbVDIuPKIHcSyEhw==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+      </head>
+      <body>
+            <div class="admin">
+                  <div class="admin__container">
+                        {{!-- NAVBAR --}} 
+                        <nav class="navbar">
+                              <div class="navbar__logo">
+                                    <a href='/'>
+                                          <i class='ri-code-line'></i>
+                                          <span>courses</span>
+                                    </a>
+                              </div>
+                              <ul class="navbar__list navbar__tab-container">
+                                    <li class="active">
+                                          <a class="navbar__tab navbar__tab--1 navbar__tab--active" data-tab="1" href="/dashboard"><i class="ri-dashboard-fill"></i>Dashboard</a>
+                                    </li>
+                                    <li>
+                                          <a class="navbar__tab navbar__tab--2" data-tab="2" href="/account"><i class="ri-account-pin-box-fill"></i>Account</a>
+                                    </li>
+                                    <li>
+                                          <a class="navbar__tab navbar__tab--3" data-tab="3" href="/courses"><i class="ri-store-3-fill"></i>Courses</a>
+                                    </li>
+                              </ul>
+                        </nav>
+                        {{!-- PANEL --}}
+                        <div class="main__panel">
+                              <div class="head">
+                                    <div class="head__search">
+                                          <input type="text" class="head__search-input">
+                                    </div>
+                                    <div class="head__group">
+                                    {{#with userInfo}}
+                                          <div class="head__bell">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M20 17h2v2H2v-2h2v-7a8 8 0 1 1 16 0v7zm-2 0v-7a6 6 0 1 0-12 0v7h12zm-9 4h6v2H9v-2z"/></svg>
+                                          </div>
+                                          <div class="head__info">
+                                                <img class="head__info-image" src={{userImage}} alt="">
+                                                <div class="head__info-group">
+                                                      <span>{{userName}}</span>
+                                                      <span>{{userEmail}}</span>
+                                                </div>
+                                          </div>
+                                    {{/with}}
+                                    </div>
+                              </div>
+                              {{!-- Dashboard --}}
+                              <div class="tab__content tab__content--1 tab__content--active">
+                                    <div class="navigation">
+                                          <ul>
+                                                <li>
+                                                      <a href="/admin">Dashboard</a>
+                                                      <i class="ri-arrow-right-s-line"></i>
+                                                </li>
+                                                <li>
+                                                      <a>Courses</a>
+                                                </li>
+                                          </ul>
+                                          <a href="/admin/create" class="btn btn-add">Thêm khóa học</a>
+                                    </div>
+                                    <div class="dash">
+                                          <div class="dash__statistics">
+                                                <div class="dash__statistic dash__statistic--course">
+                                                      <div class="dash__icon">
+                                                            <i class="ri-store-3-fill"></i>
+                                                      </div>
+                                                      <div class="dash__group">
+                                                            <h3>Số khóa học</h3>
+                                                            <span class="count">{{countCourses}}</span>
+                                                      </div>
+                                                </div>
+                                                <div class="dash__statistic dash__statistic--account">
+                                                      <div class="dash__icon">
+                                                            <i class="ri-user-3-line"></i>
+                                                      </div>
+                                                      <div class="dash__group">
+                                                            <h3>Số người dùng</h3>
+                                                            <span class="count">{{countAccounts}}</span>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="dash__courses">
+                                                <div class="update">
+                                                      {{#each courses}}
+                                                      <div class="update__course">
+                                                            <div class="update__image">
+                                                                  <img src="/uploads/{{this.image}}" alt="">
+                                                            </div>
+                                                            <div class="update__content">
+                                                                  <div class="update__group">
+                                                                        <h3>{{this.name}}</h3>
+                                                                        <p>{{this.details.desc}}</p>
+                                                                  </div>
+                                                                  <div class="update__watch">
+                                                                        <button class="btn btn-watch">Xem khóa học</button>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      {{/each}}
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              {{!-- Account --}}
+                              <div class="tab__content tab__content--2">
+                                    <div class="navigation">
+                                          <ul>
+                                                <li>
+                                                      <a href="/admin">Dashboard</a>
+                                                      <i class="ri-arrow-right-s-line"></i>
+                                                </li>
+                                                <li>
+                                                      <a>Account</a>
+                                                </li>
+                                          </ul>
+                                    </div>
+                                    
+                              </div>
+                              {{!-- Courses --}}
+                              <div class="tab__content tab__content--3">
+                                    <div class="navigation">
+                                          <ul>
+                                                <li>
+                                                      <a href="/admin">Dashboard</a>
+                                                      <i class="ri-arrow-right-s-line"></i>
+                                                </li>
+                                                <li>
+                                                      <a>Courses</a>
+                                                </li>
+                                          </ul>
+                                          <a href="/admin/create" class="btn btn-add">Thêm khóa học</a>
+                                    </div>
+                                    <table class="tbl">
+                                         <thead>
+                                                <tr>  
+                                                      <th>Tên khóa học</th>
+                                                      <th>Mô tả</th>
+                                                      <th>Trình độ</th>
+                                                      <th>Free</th>
+                                                      <th>Ngày tạo</th>
+                                                      <th>Ngày cập nhật</th>
+                                                      <th colspan="2"></th>
+                                                </tr>
+                                         </thead>
+                                         <tbody>
+                                                {{#each courses}}
+                                                <tr>
+                                                      <td class="tbl__name">{{this.name}}</td>
+                                                      <td>
+                                                            <div class="tbl__desc">{{this.details.desc}}</div>
+                                                      </td>
+                                                      <td>
+                                                            <div class="table__level">
+                                                                  {{this.details.level}}
+                                                            </div>
+                                                      </td>
+                                                      <td>{{this.isPaid}}</td>
+                                                      <td>
+                                                            <div>{{this.createdAt}}</div>
+                                                      </td>
+                                                      <td>
+                                                            <div>{{this.updatedAt}}</div>
+                                                      </td>
+                                                      <td>
+                                                            <a class="square square-edit" href="/admin/edit/{{this.id}}"><i class="ri-edit-box-line"></i></a>
+                                                            <a class="square square-delete" href="/admin/delete/{{this.id}}"><i class="ri-delete-bin-line"></i></a>
+                                                            <a class="square square-info" href="#!"><i class="ri-information-line"></i></a>
+                                                      </td>
+                                                </tr>
+                                                {{/each}}
+                                         </tbody>
+                                    </table>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </body>
+      <script src='./js/src.js'></script>
+</html>

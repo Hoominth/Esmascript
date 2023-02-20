@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import './base';
+@import './variables';
+@import './header';
+@import './courses';
+@import './slider';
+@import './footer';
+@import './form';
+@import './admin';
+@import './detail';
+@import './edit';
+
+.dots {
+      position: absolute;
+      bottom: 5%;
+      left: 15px;
+      display: flex;
+}
+
+.dots__dot {
+      border: none;
+      background-color: #b9b9b9;
+      opacity: 0.7;
+      height: 1rem;
+      width: 1.5rem;
+      border-radius: 100rem;
+      margin-right: 1rem;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      /* Only necessary when overlying images */
+      /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+}
+
+.dots__dot:last-child {
+      margin: 0;
+}
+
+.dots__dot--active {
+      /* background-color: #fff; */
+      background-color: #888;
+      opacity: 1;
+      width: 4rem;
+}

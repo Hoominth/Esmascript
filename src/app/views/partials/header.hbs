@@ -1,0 +1,56 @@
+<header class='header'>
+      <div class='container'>
+            <div class='header-flex'>
+                  <div class='header-logo'>
+                        <a href='/'>
+                              <i class='ri-code-line'></i>
+                              <span>courses</span>
+                        </a>
+                  </div>
+                  <div class='header-authen'>
+                        <ul class='header-list'>
+                              {{#if userInfo.userRole}}
+                                    <li class='header-item'>
+                                          <a href='/admin'>Admin</a>
+                                    </li>
+                                    <li class='header-item'>
+                                          <a href='#!'>Khóa học của tôi</a>
+                                    </li>
+                                    {{else}}
+                                    <li class='header-item'>
+                                          <a href='#!'>Khóa học của tôi</a>
+                                    </li>
+                              {{/if}}
+                        </ul>
+                        {{#if userInfo}}
+                              {{#with userInfo}}
+                                    <div class='header-user'>
+                                          <a class='header-profile' href='#!'>
+                                                <div class='header-thumb'>
+                                                      <img src={{userImage}} alt='' />
+                                                </div>
+                                                <div class='user-name'>
+                                                      <span>{{userName}}</span>
+                                                      <span>{{userEmail}}@</span>
+                                                </div>
+                                          </a>
+                                          <div class='header-profile--user user'>
+                                                <ul class='user-list'>
+                                                      <ul class='user-list--menu'>
+                                                            <li><a href='#!'>Trang cá nhân</a></li>
+                                                      </ul>
+                                                      <ul class='user-list--menu'>
+                                                            <li><a href='#!'>Cài đặt</a></li>
+                                                            <li><a href='/signout'>Đăng xuất</a></li>
+                                                      </ul>
+                                                </ul>
+                                          </div>
+                                    </div>
+                              {{/with}}
+                        {{else}}
+                              <a href='/signin' class='btn btn-login'>Đăng nhập</a>
+                        {{/if}}
+                  </div>
+            </div>
+      </div>
+</header>

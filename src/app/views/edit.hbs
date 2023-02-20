@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet' />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer'/>
+      <link rel='stylesheet' href='/styles/app.css' />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.rtl.min.css' integrity='sha512-TVEh7Wv2VL7denA2jjLclu/YHda8TiwmLZBhUqmJa+PVhIgbOs4mkx4nGQw+ok1f+3tf/NpbVDIuPKIHcSyEhw==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+</head>
+<body>
+      <section class="edit">
+            <div class="edit__container">
+                  <div class="edit__form">
+                        {{#with course}}      
+                        <form action="/admin/edit/handle" id="update" method="post" enctype="multipart/form-data">
+                              <input type="hidden" name="courseId" value="{{id}}">
+                              <div class="edit__row">
+                                    <div class="edit__left">
+                                          <div class="form-group">
+                                                <label for="">Tên khóa học:</label>
+                                                <input class="form-control" name="name" value="{{name}}" placeholder="Tên khóa học ..." type="text">
+                                          </div>
+                                           <div class="form-group">
+                                                <label for="">Tên đường dẫn</label>
+                                                <input class="form-control" name="slug" value="{{slug}}" placeholder="Đường dẫn .." type="text">
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="level">Chọn khóa học:</label>
+                                                <select class="form-control" name="chooseCourse" id="level">
+                                                      {{#if isPaid}}
+                                                            <option value="{{isPaid}}" selected>Miễn phí</option>
+                                                            <option value="true">Tính phí</option>
+                                                      {{else}}
+                                                            <option value="{{isPaid}}" selected>Tính phí</option>
+                                                            <option value="false">Miễn phí</option>
+                                                      {{/if}}
+                                                </select>
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="level">Trình độ</label>
+                                                <input type="text" name="level" placeholder="Trình độ" value="{{details.level}}" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="">Giá khóa học:</label>
+                                                <div class="form__row">
+                                                      <input class="form-control" name="priceOld" type="text" placeholder="Giá cũ">
+                                                      <input class="form-control" name="priceMain" type="text" placeholder="Giảm giá">
+                                                </div>
+                                          </div>
+                                          <div class="form-group">
+                                                <a href="/admin" class="btn btn-back"><i class="ri-arrow-left-s-line"></i>Trở về</a>
+                                          </div>
+                                    </div>
+                                    <div class="edit__right">
+                                          <div class="form-group">
+                                                <label for="level">Số lượng người dùng</label>
+                                                <input type="text" required name="userCount" value="{{userCount}}" placeholder="Số lượng" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                                <div class="form__image-area active" data-img="{{image}}">
+                                                      <img src="/uploads/{{image}}">
+                                                </div>
+                                                <input type="file" name="image" id="file"  accept="image/*">
+                                                <input type="text" id="fileUpdate" value="{{image}}" name="imageUpdate" hidden>
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="">Mô tả:</label>
+                                                <textarea class="form-control" name="desc" placeholder="Mô tả khóa học ...">{{details.desc}}</textarea>
+                                          </div>
+                                           <div class="form-group" style="text-align: right;">
+                                                <button class="btn btn-update">Cập nhật</button>
+                                         </div>
+                                    </div>
+                              </div>
+                        </form>
+                        {{/with}}
+                  </div>
+            </div>
+      </section>
+      <script src='/js/src.js'></script>
+</body>
+</html>
